@@ -1,5 +1,6 @@
 package com.example.agenda
 
+import android.app.appsearch.StorageInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,9 @@ class InfoContactFragment : Fragment() {
     fun showInfo(){
         if(contacto.id>0){
             binding.edTxtwName.setText(contacto.name.toString())
-            binding.edTxtwAge.setText(contacto.age.toString())
+            var strEdad:String=""
+            if(contacto.age>0){strEdad=contacto.age.toString()}
+            binding.edTxtwAge.setText(strEdad)
             binding.edTxtwPhone.setText(contacto.phone)
             binding.edTxtwPLastName.setText(contacto.p_last_name)
             binding.edTxtwMLastName.setText(contacto.m_last_name)

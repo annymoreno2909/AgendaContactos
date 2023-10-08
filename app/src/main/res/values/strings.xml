@@ -1,0 +1,20 @@
+<resources>
+    <string translatable="true" name="app_name">Agenda</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Contactos</string>
+    <string name="second_fragment_label">Información del contacto</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="name">Nombre</string>
+    <string name="phone">Telefono</string>
+    <string name="p_last_name">Apellido Paterno</string>
+    <string name="m_last_name">Apellido Materno</string>
+    <string name="age">Edad</string>
+    <string name="gender">Género:</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
+    <string name="save">Guardar</string>
+    <string name="void_string"></string>
+
+</resources>

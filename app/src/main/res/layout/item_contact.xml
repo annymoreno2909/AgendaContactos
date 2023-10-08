@@ -11,7 +11,7 @@
         android:src="@mipmap/ic_profile_photo_round"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/imgVwPhoto"
+        android:id="@+id/imgBtnPhoto"
         android:foregroundGravity="left|top"
         />
 
@@ -22,7 +22,7 @@
         android:gravity="center_vertical"
         android:textSize="28sp"
         android:paddingLeft="15dp"
-        app:layout_constraintStart_toEndOf="@id/imgVwPhoto"
+        app:layout_constraintStart_toEndOf="@id/imgBtnPhoto"
         android:foregroundGravity="center_vertical"
         />
 

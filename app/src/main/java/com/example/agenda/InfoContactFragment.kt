@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+//import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -53,15 +55,7 @@ class InfoContactFragment : Fragment() {
         }
 
     }
-    /*fun backToContactList(){
-        var fragmentManager: FragmentManager = parentFragmentManager
-        var fragmentTransaction = fragmentManager!!.beginTransaction()
-        var fragmentContactList: FirstFragment= FirstFragment()
 
-        fragmentTransaction.replace(R.id.fragment_content_main, fragmentContactList)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }*/
     fun NavController.safelyNavigate(@IdRes resId: Int, args: Bundle? = null) {
         try { navigate(resId, args) }
         catch (e: Exception) {  }
@@ -69,6 +63,16 @@ class InfoContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*TODO: seleccion de imagen*/
+      /*  val pickVisualMedia=registerForActivityResult(
+            ActivityResultContracts.PickVisualMedia( )
+        ){uri->
+            if(uri!=null){
+                contacto.photo=uri.toString()
+            }
+            else{contacto.photo=""}
+
+        }*/
         var contactsDBHelper: ContactsDBHelper= ContactsDBHelper(context,null)
         var response:Response
         showInfo();
@@ -78,12 +82,15 @@ class InfoContactFragment : Fragment() {
             strContact= arguments?.get("contacto") as String
             contacto=gson.fromJson(strContact, Contact::class.java)
         }catch(e:java.lang.Exception){}
-
+    /*TODO: lanzar evento de busque de imagen*/
+       /* binding.imgBtnPhoto.setOnClickListener(
+            View.OnClickListener { v-> pickVisualMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
+        )
         //regresar a lista
         binding.btnReturnToList.setOnClickListener { view->
             findNavController().navigate(R.id.Info_To_Contact_List)
 
-        }
+        }*/
         //actualizacion/creacion
         binding.btnSaveContact.setOnClickListener {view ->
             var strName:String =binding.edTxtwName.getText().toString()

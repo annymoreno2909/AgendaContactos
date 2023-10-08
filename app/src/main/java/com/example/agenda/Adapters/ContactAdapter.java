@@ -1,6 +1,7 @@
 package com.example.agenda.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.agenda.Classes.Contact;
+import com.example.agenda.FirstFragment;
 import com.example.agenda.R;
 import com.example.agenda.SQLite.ContactsDBHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 

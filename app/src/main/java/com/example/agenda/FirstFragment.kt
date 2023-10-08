@@ -1,6 +1,5 @@
 package com.example.agenda
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +17,6 @@ import com.example.agenda.Classes.Contact
 import com.example.agenda.Classes.Response
 import com.example.agenda.SQLite.ContactsDBHelper
 import com.example.agenda.databinding.FragmentContactListBinding
-import java.text.FieldPosition
 import com.google.gson.Gson
 
 /**
@@ -68,6 +66,11 @@ class FirstFragment : Fragment() {
                 contactos
             )
             binding.rcVwContacts.adapter=contactAdapter
+            binding.rcVwContacts.setOnClickListener(View.OnClickListener { v->
+                val viewHolder = view.tag as RecyclerView.ViewHolder
+                val position = viewHolder.adapterPosition
+                setContactInfo(contactos.get(position))
+            })
             /**GESTOS AL RECYCLER VIEW */
             val simpleCallback: ItemTouchHelper.SimpleCallback = object :
                 ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.ANIMATION_TYPE_SWIPE_CANCEL) {

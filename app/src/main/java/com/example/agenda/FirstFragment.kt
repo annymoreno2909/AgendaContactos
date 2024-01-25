@@ -101,14 +101,14 @@ class FirstFragment : Fragment() {
         var gson:Gson=Gson()
         val bundle = bundleOf("contact" to gson.toJson(contact) )
         findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
-
+/*
         var fragmentManager:FragmentManager= parentFragmentManager
         var fragmentTransaction = fragmentManager!!.beginTransaction()
         var fragmentInfo: InfoContactFragment= InfoContactFragment()
         fragmentInfo.contacto= contact
         fragmentTransaction.replace(R.id.fragment_content_main, fragmentInfo)
         fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+        fragmentTransaction.commit()*/
     }
     override fun onDestroyView() {
         super.onDestroyView()
